@@ -1,1 +1,60 @@
+import { Button } from "@/components/ui/button";
+import { Sparkles, ArrowRight } from "lucide-react";
+import appMockup from "@/assets/app-mockup.jpg";
+
+const AICoach = () => {
+  return (
+    <section id="coach" className="py-32 border-t border-border relative overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="relative order-2 lg:order-1">
+            <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
+            <img
+              src={appMockup}
+              alt="PULSE app showing AI coach interface"
+              className="relative w-full rounded-sm"
+              loading="lazy"
+              width={1024}
+              height={1024}
+            />
+          </div>
+
+          <div className="space-y-8 order-1 lg:order-2">
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-primary">
+              <Sparkles className="w-4 h-4" /> AI Coach
+            </div>
+            <h2 className="font-display text-5xl md:text-6xl uppercase leading-[0.9]">
+              Your trainer, <br />
+              <span className="text-primary">always on.</span>
+            </h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Trained on millions of training sessions and the latest sports science.
+              Ask anything — from form cues to nutrition timing. Get instant, personalized answers.
+            </p>
+
+            <div className="space-y-3">
+              {[
+                "Why am I sore after yesterday's leg day?",
+                "Build me a 4-week hypertrophy block",
+                "What should I eat post-workout tonight?",
+              ].map((q) => (
+                <div key={q} className="flex items-center gap-3 p-4 border border-border rounded-sm bg-secondary/30 hover:border-primary transition-colors cursor-pointer group">
+                  <span className="text-primary font-mono text-sm">›</span>
+                  <span className="text-sm">{q}</span>
+                  <ArrowRight className="w-4 h-4 ml-auto text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                </div>
+              ))}
+            </div>
+
+            <Button size="lg" variant="hero">
+              Try the Coach <ArrowRight />
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default AICoach;
 
