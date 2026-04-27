@@ -57,4 +57,32 @@ const AICoach = () => {
 };
 
 export default AICoach;
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+
+const CTA = () => {
+  return (
+    <section className="py-32 border-t border-border relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,hsl(var(--primary)/0.15),transparent_60%)]" />
+      <div className="container mx-auto px-6 relative">
+        <div className="text-center max-w-4xl mx-auto">
+          <h2 className="font-display text-6xl md:text-9xl uppercase leading-[0.85] mb-8">
+            Stop <span className="text-stroke">scrolling.</span>
+            <br />
+            Start <span className="text-primary">moving.</span>
+          </h2>
+          <p className="text-lg text-muted-foreground mb-10 max-w-xl mx-auto">
+            Join 2.4M athletes building stronger bodies and sharper minds. 14 days free, cancel anytime.
+          </p>
+          <Button size="xl" variant="hero">
+            Claim Your Trial <ArrowRight />
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CTA;
+
 
